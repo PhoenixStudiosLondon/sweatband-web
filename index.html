@@ -134,6 +134,8 @@
   .row.checked .row-name{ color: var(--ink-dim); }
   .row-meta{ font-size: 12.5px; color: var(--ink-dim); margin-top: 3px; line-height:1.4; }
   .form-link{ display:inline-block; font-size: 12px; color: var(--cyan); margin-top: 4px; text-decoration: underline; }
+  .track-link{ display:block; font-size: 12px; color: var(--yellow); margin-top: 4px; text-decoration: none; opacity: 0.9; }
+  .track-link:active{ opacity: 1; }
   .weight-box{ display:flex; align-items:center; gap:6px; margin-top: 6px; }
   .weight-input{
     width: 54px; background: rgba(255,255,255,0.06); border: 1px solid var(--card-line);
@@ -326,76 +328,76 @@
 
 <script>
 const WARMUP_A = [
-  { name: "Cross trainer", meta: "15 min, alternating 1 min arms-assisted / 1 min legs-only, HR ~135", link: "https://www.puregym.com/blog/elliptical-machine-hiit/" },
-  { name: "Rotational lunges", meta: "10 each leg (20 total), rotate top half of body fully round", link: "https://www.fitmetrics.ch/en/exercise/6733d70d6deca-lunge-with-thoracic-rotation" },
-  { name: "Lunge chest opener", meta: "Thumb-tracking rotation, both sides", link: "https://www.neuroendomke.com/exercise-of-the-week-deep-lunge-stretch-with-thoracic-rotational-reach/" },
-  { name: "Cat-cow", meta: "10 reps", link: "https://health.clevelandclinic.org/cat-cow-stretch" },
-  { name: "Pigeon pose", meta: "Hold, both sides", link: "https://www.healthline.com/health/fitness/pigeon-pose" },
-  { name: "Press-ups", meta: "10 reps", link: "https://www.acefitness.org/resources/everyone/exercise-library/41/push-up/" },
-  { name: "Airplane (bird dog)", meta: "Alternating opposite arm/leg, rotating", link: "https://www.acefitness.org/resources/everyone/exercise-library/14/bird-dog/" },
+  { name: "Cross trainer", meta: "15 min, alternating 1 min arms-assisted / 1 min legs-only, HR ~135", link: "https://www.puregym.com/blog/elliptical-machine-hiit/" , track: { title: "Rock You Like a Hurricane", artist: "Scorpions" } },
+  { name: "Rotational lunges", meta: "10 each leg (20 total), rotate top half of body fully round", link: "https://www.fitmetrics.ch/en/exercise/6733d70d6deca-lunge-with-thoracic-rotation" , track: { title: "Walking on Sunshine", artist: "Katrina & the Waves" } },
+  { name: "Lunge chest opener", meta: "Thumb-tracking rotation, both sides", link: "https://www.neuroendomke.com/exercise-of-the-week-deep-lunge-stretch-with-thoracic-rotational-reach/" , track: { title: "Africa", artist: "Toto" } },
+  { name: "Cat-cow", meta: "10 reps", link: "https://health.clevelandclinic.org/cat-cow-stretch" , track: { title: "True Colors", artist: "Cyndi Lauper" } },
+  { name: "Pigeon pose", meta: "Hold, both sides", link: "https://www.healthline.com/health/fitness/pigeon-pose" , track: { title: "Take On Me", artist: "a-ha" } },
+  { name: "Press-ups", meta: "10 reps", link: "https://www.acefitness.org/resources/everyone/exercise-library/41/push-up/" , track: { title: "Working for the Weekend", artist: "Loverboy" } },
+  { name: "Airplane (bird dog)", meta: "Alternating opposite arm/leg, rotating", link: "https://www.acefitness.org/resources/everyone/exercise-library/14/bird-dog/" , track: { title: "Jump", artist: "Van Halen" } },
 ];
 
 const WARMUP_B = [
-  { name: "Bike or cross trainer", meta: "8 min easy-to-moderate, HR toward 130–135", link: "https://www.puregym.com/blog/elliptical-machine-hiit/" },
-  { name: "Rotational lunge + thoracic opener", meta: "10 each side", link: "https://www.fitmetrics.ch/en/exercise/6733d70d6deca-lunge-with-thoracic-rotation" },
-  { name: "Cat-cow + hip flexor stretch", meta: "1 min", link: "https://health.clevelandclinic.org/cat-cow-stretch" },
+  { name: "Bike or cross trainer", meta: "8 min easy-to-moderate, HR toward 130–135", link: "https://www.puregym.com/blog/elliptical-machine-hiit/" , track: { title: "Danger Zone", artist: "Kenny Loggins" } },
+  { name: "Rotational lunge + thoracic opener", meta: "10 each side", link: "https://www.fitmetrics.ch/en/exercise/6733d70d6deca-lunge-with-thoracic-rotation" , track: { title: "Talking in Your Sleep", artist: "The Romantics" } },
+  { name: "Cat-cow + hip flexor stretch", meta: "1 min", link: "https://health.clevelandclinic.org/cat-cow-stretch" , track: { title: "99 Luftballons", artist: "Nena" } },
 ];
 
 const ROUTINE = [
   {
     round: "Round 1", title: "Arms & Chest", week: 1, warmup: WARMUP_A,
     exercises: [
-      { name: "Chest press", meta: "Bench, flat or slightly elevated · Target: 20kg", sets: "4×10", link: "https://www.healthline.com/health/exercise-fitness/chest-press", trackWeight: true },
-      { name: "Single-arm pulls", meta: "Each side · Target: 20kg", sets: "4×10", link: "https://www.acefitness.org/resources/everyone/exercise-library/126/single-arm-row/", trackWeight: true },
-      { name: "Lat pulldown", meta: "Machine · Target: 100kg", sets: "4×10", link: "https://www.acefitness.org/resources/everyone/exercise-library/158/seated-lat-pulldown/", trackWeight: true },
+      { name: "Chest press", meta: "Bench, flat or slightly elevated · Target: 20kg", sets: "4×10", link: "https://www.healthline.com/health/exercise-fitness/chest-press", trackWeight: true , track: { title: "Livin' on a Prayer", artist: "Bon Jovi" } },
+      { name: "Single-arm pulls", meta: "Each side · Target: 20kg", sets: "4×10", link: "https://www.acefitness.org/resources/everyone/exercise-library/126/single-arm-row/", trackWeight: true , track: { title: "Kickstart My Heart", artist: "Mötley Crüe" } },
+      { name: "Lat pulldown", meta: "Machine · Target: 100kg", sets: "4×10", link: "https://www.acefitness.org/resources/everyone/exercise-library/158/seated-lat-pulldown/", trackWeight: true , track: { title: "You Give Love a Bad Name", artist: "Bon Jovi" } },
     ]
   },
   {
     round: "Round 2", title: "Legs", week: 1, warmup: WARMUP_A,
     exercises: [
-      { name: "Step-ups (warm-up)", meta: "Bodyweight, each leg", sets: "1×10", link: "https://www.acefitness.org/resources/everyone/exercise-library/28/step-up/" },
-      { name: "Step-ups (weighted)", meta: "~2.5 ft bench · Target: 17.5kg each hand", sets: "4×10", link: "https://www.acefitness.org/resources/everyone/exercise-library/28/step-up/", trackWeight: true },
-      { name: "Squats", meta: "Target: 20kg dumbbell", sets: "4×10", link: "https://healthline.com/health/fitness-exercise/dumbbell-goblet-squat", trackWeight: true },
-      { name: "Romanian deadlifts", meta: "Target: 20kg per dumbbell (x2)", sets: "4×10", link: "https://www.nasm.org/resource-center/exercise-library/dumbbell-romanian-deadlift", trackWeight: true },
+      { name: "Step-ups (warm-up)", meta: "Bodyweight, each leg", sets: "1×10", link: "https://www.acefitness.org/resources/everyone/exercise-library/28/step-up/" , track: { title: "Legs", artist: "ZZ Top" } },
+      { name: "Step-ups (weighted)", meta: "~2.5 ft bench · Target: 17.5kg each hand", sets: "4×10", link: "https://www.acefitness.org/resources/everyone/exercise-library/28/step-up/", trackWeight: true , track: { title: "We're Not Gonna Take It", artist: "Twisted Sister" } },
+      { name: "Squats", meta: "Target: 20kg dumbbell", sets: "4×10", link: "https://healthline.com/health/fitness-exercise/dumbbell-goblet-squat", trackWeight: true , track: { title: "Maniac", artist: "Michael Sembello" } },
+      { name: "Romanian deadlifts", meta: "Target: 20kg per dumbbell (x2)", sets: "4×10", link: "https://www.nasm.org/resource-center/exercise-library/dumbbell-romanian-deadlift", trackWeight: true , track: { title: "Panama", artist: "Van Halen" } },
     ]
   },
   {
     round: "Round 3", title: "Core & Cardio", week: 1, warmup: WARMUP_A,
     exercises: [
-      { name: "Single-arm snatch pulls", meta: "Alternating sides · Target: 17.5kg", sets: "4×10", link: "https://workoutlabs.com/exercise-guide/one-arm-kettlebell-snatch/", trackWeight: true },
-      { name: "Renegade rows", meta: "Target: 14kg each hand", sets: "3×10", link: "https://www.masterclass.com/articles/renegade-row-guide", trackWeight: true },
-      { name: "Kettlebell swings", meta: "Target: 17.5kg kettlebell", sets: "4×10", link: "https://www.acefitness.org/resources/everyone/exercise-library/391/swing/", trackWeight: true },
-      { name: "Light stretch", meta: "Cool-down", sets: "—" },
+      { name: "Single-arm snatch pulls", meta: "Alternating sides · Target: 17.5kg", sets: "4×10", link: "https://workoutlabs.com/exercise-guide/one-arm-kettlebell-snatch/", trackWeight: true , track: { title: "Sweet Dreams (Are Made of This)", artist: "Eurythmics" } },
+      { name: "Renegade rows", meta: "Target: 14kg each hand", sets: "3×10", link: "https://www.masterclass.com/articles/renegade-row-guide", trackWeight: true , track: { title: "Hot for Teacher", artist: "Van Halen" } },
+      { name: "Kettlebell swings", meta: "Target: 17.5kg kettlebell", sets: "4×10", link: "https://www.acefitness.org/resources/everyone/exercise-library/391/swing/", trackWeight: true , track: { title: "Gimme All Your Lovin'", artist: "ZZ Top" } },
+      { name: "Light stretch", meta: "Cool-down", sets: "—" , track: { title: "Home Sweet Home", artist: "Mötley Crüe" } },
     ]
   },
   {
     round: "Round 4", title: "Push/Pull Upper", week: 2, warmup: WARMUP_B,
     exercises: [
-      { name: "Chest press machine", meta: "Progress load once clean", sets: "4×10", link: "https://www.acefitness.org/resources/everyone/exercise-library/188/seated-chest-press/", trackWeight: true },
-      { name: "Seated row machine", meta: "", sets: "4×10", link: "https://www.acefitness.org/resources/everyone/exercise-library/48/seated-row/", trackWeight: true },
-      { name: "Shoulder press machine", meta: "", sets: "3×10", link: "https://www.acefitness.org/resources/everyone/exercise-library/186/seated-shoulder-press/", trackWeight: true },
-      { name: "Single-arm DB row", meta: "Bench-supported · Target: up to 20kg", sets: "3×10", link: "https://www.puregym.com/exercises/back/rows/single-arm-dumbbell-row/", trackWeight: true },
-      { name: "Pallof press", meta: "Band/cable, or dumbbell resisting rotation", sets: "3×10", link: "https://www.puregym.com/exercises/abs/pallof-press/", trackWeight: true },
+      { name: "Chest press machine", meta: "Progress load once clean", sets: "4×10", link: "https://www.acefitness.org/resources/everyone/exercise-library/188/seated-chest-press/", trackWeight: true , track: { title: "Rock of Ages", artist: "Def Leppard" } },
+      { name: "Seated row machine", meta: "", sets: "4×10", link: "https://www.acefitness.org/resources/everyone/exercise-library/48/seated-row/", trackWeight: true , track: { title: "Separate Ways (Worlds Apart)", artist: "Journey" } },
+      { name: "Shoulder press machine", meta: "", sets: "3×10", link: "https://www.acefitness.org/resources/everyone/exercise-library/186/seated-shoulder-press/", trackWeight: true , track: { title: "Owner of a Lonely Heart", artist: "Yes" } },
+      { name: "Single-arm DB row", meta: "Bench-supported · Target: up to 20kg", sets: "3×10", link: "https://www.puregym.com/exercises/back/rows/single-arm-dumbbell-row/", trackWeight: true , track: { title: "I Love Rock 'n' Roll", artist: "Joan Jett & the Blackhearts" } },
+      { name: "Pallof press", meta: "Band/cable, or dumbbell resisting rotation", sets: "3×10", link: "https://www.puregym.com/exercises/abs/pallof-press/", trackWeight: true , track: { title: "Should I Stay or Should I Go", artist: "The Clash" } },
     ]
   },
   {
     round: "Round 5", title: "Legs (Varied)", week: 2, warmup: WARMUP_B,
     exercises: [
-      { name: "Leg press machine", meta: "Progress load once clean", sets: "4×10", link: "https://exrx.net/WeightExercises/GluteusMaximus/LVSeatedLegPress", trackWeight: true },
-      { name: "Leg curl machine", meta: "Hamstrings", sets: "3×10", link: "https://exrx.net/WeightExercises/Hamstrings/LVSeatedLegCurl", trackWeight: true },
-      { name: "Bulgarian split squat", meta: "Rear foot on bench · Target: 10–14kg", sets: "3×8", link: "https://www.nasm.org/resource-center/exercise-library/bulgarian-split-squat", trackWeight: true },
-      { name: "Romanian deadlifts", meta: "Target: 20kg per dumbbell (x2)", sets: "3×10", link: "https://www.nasm.org/resource-center/exercise-library/dumbbell-romanian-deadlift", trackWeight: true },
-      { name: "Standing calf raise", meta: "Machine or dumbbells", sets: "3×12", link: "https://www.acefitness.org/resources/everyone/exercise-library/73/standing-calf-raises-wall/", trackWeight: true },
+      { name: "Leg press machine", meta: "Progress load once clean", sets: "4×10", link: "https://exrx.net/WeightExercises/GluteusMaximus/LVSeatedLegPress", trackWeight: true , track: { title: "The Final Countdown", artist: "Europe" } },
+      { name: "Leg curl machine", meta: "Hamstrings", sets: "3×10", link: "https://exrx.net/WeightExercises/Hamstrings/LVSeatedLegCurl", trackWeight: true , track: { title: "Round and Round", artist: "Ratt" } },
+      { name: "Bulgarian split squat", meta: "Rear foot on bench · Target: 10–14kg", sets: "3×8", link: "https://www.nasm.org/resource-center/exercise-library/bulgarian-split-squat", trackWeight: true , track: { title: "Cum On Feel the Noize", artist: "Quiet Riot" } },
+      { name: "Romanian deadlifts", meta: "Target: 20kg per dumbbell (x2)", sets: "3×10", link: "https://www.nasm.org/resource-center/exercise-library/dumbbell-romanian-deadlift", trackWeight: true , track: { title: "Panama", artist: "Van Halen" } },
+      { name: "Standing calf raise", meta: "Machine or dumbbells", sets: "3×12", link: "https://www.acefitness.org/resources/everyone/exercise-library/73/standing-calf-raises-wall/", trackWeight: true , track: { title: "Metal Health (Bang Your Head)", artist: "Quiet Riot" } },
     ]
   },
   {
     round: "Round 6", title: "Cardio, Core & Conditioning", week: 2, warmup: WARMUP_B,
     exercises: [
-      { name: "Running machine intervals", meta: "1 min hard / 1 min easy × 8 (16 min)", sets: "—", link: "https://www.garagegymreviews.com/treadmill-interval-training-workouts" },
-      { name: "Kettlebell swings", meta: "Target: 17.5–20kg", sets: "4×10", link: "https://www.acefitness.org/resources/everyone/exercise-library/391/swing/", trackWeight: true },
-      { name: "Single-arm KB snatch", meta: "Alternating · Target: 17.5–20kg", sets: "4×10", link: "https://workoutlabs.com/exercise-guide/one-arm-kettlebell-snatch/", trackWeight: true },
-      { name: "Stability ball plank/rollout", meta: "Build duration over time", sets: "3×30–45s", link: "https://fitbod.me/exercises/stability-ball-roll-out" },
-      { name: "Russian twist", meta: "Dumbbell or kettlebell", sets: "3×10", link: "https://spotebi.com/exercise-guide/russian-twist/", trackWeight: true },
+      { name: "Running machine intervals", meta: "1 min hard / 1 min easy × 8 (16 min)", sets: "—", link: "https://www.garagegymreviews.com/treadmill-interval-training-workouts" , track: { title: "Turn Up the Radio", artist: "Autograph" } },
+      { name: "Kettlebell swings", meta: "Target: 17.5–20kg", sets: "4×10", link: "https://www.acefitness.org/resources/everyone/exercise-library/391/swing/", trackWeight: true , track: { title: "Gimme All Your Lovin'", artist: "ZZ Top" } },
+      { name: "Single-arm KB snatch", meta: "Alternating · Target: 17.5–20kg", sets: "4×10", link: "https://workoutlabs.com/exercise-guide/one-arm-kettlebell-snatch/", trackWeight: true , track: { title: "Physical", artist: "Olivia Newton-John" } },
+      { name: "Stability ball plank/rollout", meta: "Build duration over time", sets: "3×30–45s", link: "https://fitbod.me/exercises/stability-ball-roll-out" , track: { title: "Everybody Wants to Rule the World", artist: "Tears for Fears" } },
+      { name: "Russian twist", meta: "Dumbbell or kettlebell", sets: "3×10", link: "https://spotebi.com/exercise-guide/russian-twist/", trackWeight: true , track: { title: "Push It", artist: "Salt-N-Pepa" } },
     ]
   },
 ];
@@ -482,6 +484,7 @@ function renderRow(item, id, withCheck){
         <div class="row-name">${item.name}</div>
         ${item.meta ? `<div class="row-meta">${item.meta}</div>` : ''}
         ${item.link ? `<a class="form-link" href="${item.link}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Form guide ↗</a>` : ''}
+        ${item.track ? `<a class="track-link" href="https://www.youtube.com/results?search_query=${encodeURIComponent(item.track.title + ' ' + item.track.artist)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">🎵 Anthem: ${item.track.title} — ${item.track.artist}</a>` : ''}
         ${item.trackWeight ? `
           <div class="weight-box" onclick="event.stopPropagation()">
             <input type="number" inputmode="decimal" step="0.5" class="weight-input"
@@ -592,7 +595,7 @@ function openAbout(){
       <div class="picker-sheet about-sheet">
         <div class="about-title">What Even Is Sweatband?!</div>
         <div class="about-body">
-          Sweatband is a totally rad training app, built for anyone who came of age on mixtapes, leg warmers, and way too much hairspray. Six killer routines cycle through so your muscles never get bored — and neither does your spandex. Tap through your reps, log your sesh, and keep those neon headbands looking sharp. No excuses, just gains — because looking this good in Lycra takes serious work.
+          Sweatband is a totally rad training app, built for anyone who came of age on mixtapes, leg warmers, and way too much hairspray. Six killer routines cycle through so your muscles never get bored — and neither does your spandex. Tap through your reps, log your sesh, and keep those neon headbands looking sharp. Every single move comes with its own workout anthem, so you'll never lift, swing, or stretch in silence. No excuses, just gains — because looking this good in Lycra takes serious work.
         </div>
         <button class="about-close" onclick="closeAbout()">Rad. Let's go.</button>
       </div>
